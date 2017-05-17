@@ -8,6 +8,6 @@ class Category < ActiveRecord::Base
   private
 
   def should_generate_new_friendly_id?
-    slug.nil? || name_changed? 
+    slug.nil? || name_changed?
   end
 end
