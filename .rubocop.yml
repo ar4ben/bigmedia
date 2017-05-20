@@ -1,0 +1,13 @@
+Rails:
+  Enabled: true
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'bin/**/*'
+Style/StringLiterals:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Metrics/LineLength:
+  Max: 100
