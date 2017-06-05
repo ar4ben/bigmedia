@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  get '/admin/autocomplete_tags', to: 'admin/articles#autocomplete_tags', as: 'autocomplete_tags'
+
   resources :categories
   resources :articles
   # The priority is based upon order of creation: first created -> highest priority.
