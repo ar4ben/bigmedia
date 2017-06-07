@@ -17,3 +17,10 @@
 body.active_admin {
   @import "select2";
 }
+.cke_chrome {
+  width: 100% !important;
+  overflow: hidden;
+}
+.tagselect {
+  width: 10% !important;
+}

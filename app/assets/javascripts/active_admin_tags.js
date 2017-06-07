@@ -1,4 +1,8 @@
+var CKEDITOR_BASEPATH = '/assets/ckeditor/';
 $(document).ready(function() {
+    $('.prettyselect').each(function() {
+      $(this).select2({});
+    });
     $('.tagselect').each(function() {
         var placeholder = $(this).data('placeholder');
         var url = $(this).data('url');

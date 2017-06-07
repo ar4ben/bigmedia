@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get '/admin/autocomplete_tags', to: 'admin/articles#autocomplete_tags', as: 'autocomplete_tags'

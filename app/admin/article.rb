@@ -31,22 +31,25 @@ ActiveAdmin.register Article do
 
   form do |f|
     semantic_errors
-    inputs :title, :body
+    inputs :title 
+    input :body, :as => :ckeditor
     inputs do
-      input :categories, :as => :check_boxes
+      input :categories, :as => :select, input_html: { class: 'prettyselect'}
+    end  
+    inputs do
+      input :tag_list,
+        as: :select,
+        multiple: :true,
+        label: "Tags",
+        collection: f.object.tags.map{|t| [t.name,:selected=> true]},
+        input_html: {
+          data: {
+            placeholder: "Enter tags",
+            url: autocomplete_tags_path 
+            },
+          class: 'tagselect'
+        }
     end
-    f.input :tag_list,
-      as: :select,
-      multiple: :true,
-      label: "Tags",
-      collection: f.object.tags.map{|t| [t.name,:selected=> true]},
-      input_html: {
-        data: {
-          placeholder: "Enter tags",
-          url: autocomplete_tags_path 
-          },
-        class: 'tagselect'
-      }
     actions
   end
 end
