@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'activeadmin'
+gem 'active_admin_flat_skin'
 gem 'acts-as-taggable-on'
 gem 'ckeditor'
 gem 'coffee-rails', '~> 4.1.0'

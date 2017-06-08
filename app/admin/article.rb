@@ -8,7 +8,7 @@ ActiveAdmin.register Article do
 
   index do
     column :title
-    column :category
+    column (:category) { |cat| cat.categories.map(&:name).join(', ')}
     column :created_at
     actions
   end
@@ -32,7 +32,9 @@ ActiveAdmin.register Article do
   form do |f|
     semantic_errors
     inputs :title 
-    input :body, :as => :ckeditor
+    inputs do
+      input :body, :as => :ckeditor
+    end
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  
