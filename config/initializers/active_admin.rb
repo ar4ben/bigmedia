@@ -1,4 +1,8 @@
 ActiveAdmin.setup do |config|
+  config.download_links = false
+  config.comments = false
+  config.footer = "v 1.0"
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -178,7 +182,7 @@ ActiveAdmin.setup do |config|
   # Breadcrumbs are enabled by default. You can customize them for individual
   # resources or you can disable them globally from here.
   #
-  # config.breadcrumb = false
+   config.breadcrumb = false
 
   # == Create Another Checkbox
   #

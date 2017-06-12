@@ -1,7 +1,7 @@
 var CKEDITOR_BASEPATH = '/assets/ckeditor/';
 $(document).ready(function() {
     $('.prettyselect').each(function() {
-      $(this).select2({ placeholder: 'select' });
+      $(this).select2({ placeholder: 'Choose from list' });
     });
     $('.tagselect').each(function() {
         var placeholder = $(this).data('placeholder');

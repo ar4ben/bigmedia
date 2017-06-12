@@ -11,7 +11,7 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "active_admin_flat_skin";
-@import "font-awesome.css";
+@import "font-awesome";
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
@@ -19,10 +19,17 @@
 body.active_admin {
   @import "select2";
 }
-.cke_chrome {
+html .ckeditor .cke_chrome {
   width: 100% !important;
   overflow: hidden;
 }
-.tagselect {
-  width: 10% !important;
+.tagselect, .prettyselect {
+  width: 50% !important;
+}
+//make selections visible in active admin filter (active admin flat skin fix)
+.select2-container {
+  z-index: 5000;
+}
+#filters_sidebar_section .prettyselect, #filters_sidebar_section .tagselect {  
+  width: 100% !important; 
 }

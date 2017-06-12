@@ -7,7 +7,7 @@ class Article < ActiveRecord::Base
   has_many :categories, through: :categorization
 
   validate :has_category?
-  validates :title, :slug, presence: true
+  validates :title, :slug, presence: true, uniqueness: true
 
   private
 
