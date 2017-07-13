@@ -9,13 +9,17 @@ class Article < ActiveRecord::Base
   validate :has_category?
   validates :title, :slug, presence: true, uniqueness: true
 
-  private
-
-  def has_category?
-    errors.add(:base, 'Должна быть выбрана категория') if categorization.blank?
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize(transliterations: :russian).to_s
   end
 
   def should_generate_new_friendly_id?
     slug.nil? || title_changed?
+  end
+
+  private
+
+  def has_category?
+    errors.add(:base, 'Должна быть выбрана категория') if categorization.blank?
   end
 end

@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_params :title, :body, tag_list: [], category_ids: []
+  permit_params :title, :body, :published, tag_list: [], category_ids: []
 
   filter :title
   filter :body
@@ -18,8 +18,9 @@ ActiveAdmin.register Article do
 
   index do
     column :title
-    column (:category) { |cat| cat.categories.map(&:name).join(', ')}
+    column (:category) { |user| user.categories.map(&:name).join(', ')}
     column :created_at
+    column :published
     actions
   end
 
@@ -67,6 +68,9 @@ ActiveAdmin.register Article do
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  
+    inputs do
+      input :published, :as => :select, input_html: { class: 'prettyselect'}
+    end  if current_admin_user.has_any_role? :super_admin, :admin
     inputs do
       input :tag_list,
         as: :select,

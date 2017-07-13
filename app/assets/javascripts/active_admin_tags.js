@@ -1,4 +1,5 @@
 var CKEDITOR_BASEPATH = '/assets/ckeditor/';
+
 $(document).ready(function() {
     $('.prettyselect').each(function() {
       $(this).select2({ placeholder: 'Choose from list' });
@@ -21,5 +22,9 @@ $(document).ready(function() {
             }
           }
         });
+    });
+    //hide sidebar after search 
+    $('#search-status-_sidebar_section').click(function(event) {
+      $(this).hide();
     });
 });
