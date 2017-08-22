@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_params :title, :body, :published, tag_list: [], category_ids: []
+  permit_params :title, :body, :preview_img, :published, tag_list: [], category_ids: []
 
   filter :title
   filter :body
@@ -31,7 +31,11 @@ ActiveAdmin.register Article do
           row :body do |article| 
             article.body.html_safe 
           end
-        else 
+        elsif field == :preview_img
+          row :preview_img do |article|
+            image_tag(article.preview_img)
+          end
+        else
           row field
         end
       end
@@ -65,12 +69,10 @@ ActiveAdmin.register Article do
     inputs do
       input :body, :as => :ckeditor
     end
+    inputs :preview_img
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  
-    inputs do
-      input :published, :as => :select, input_html: { class: 'prettyselect'}
-    end  if current_admin_user.has_any_role? :super_admin, :admin
     inputs do
       input :tag_list,
         as: :select,
@@ -85,6 +87,9 @@ ActiveAdmin.register Article do
           class: 'tagselect'
         }
     end
+    inputs do
+      input :published, :as => :select, input_html: { class: 'prettyselect'}
+    end  if current_admin_user.has_any_role? :super_admin, :admin
     actions
   end
 end

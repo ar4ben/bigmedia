@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170703012130) do
+ActiveRecord::Schema.define(version: 20170814015515) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -60,10 +60,11 @@ ActiveRecord::Schema.define(version: 20170703012130) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "slug"
-    t.boolean  "published",  default: false
+    t.boolean  "published",   default: false
+    t.string   "preview_img"
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true

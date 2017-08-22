@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html, body {
+  background: #c9f1fd  
+}
+.thumbnail {
+  background: #c9f1fd;
+  border: none;
+}
+.main-search {
+  margin-top: 20px;
+}
+.main-list {
+  border: none;
+}
+.cool-borders {
+  border-top: 3px solid rgb(175, 209, 218);
+  border-bottom: 3px solid rgb(175, 209, 218);
+  border-radius: 50px 50px 50px 50px 
+}

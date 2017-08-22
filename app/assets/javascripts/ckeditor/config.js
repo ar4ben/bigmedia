@@ -10,6 +10,18 @@ CKEDITOR.editorConfig = function( config )
   // config.uiColor = '#AADC6E';
   config.extraPlugins = 'autogrow';
   config.extraPlugins = 'mediaembed';
+  config.extraPlugins = 'dialog';
+  config.extraPlugins = 'dialogui';
+  config.extraPlugins = 'widget';
+  config.extraPlugins = 'lineutils';
+  config.extraPlugins = 'clipboard';
+  config.extraPlugins = 'notification';
+  config.extraPlugins = 'toolbar';
+  config.extraPlugins = 'button';
+  config.extraPlugins = 'widgetselection';
+  config.extraPlugins = 'image2';
+  
+  config.stylesSet = 'my_styles:/assets/ckeditor/extrastyles.js';
   /* Filebrowser routes */
   // The location of an external file browser, that should be launched when "Browse Server" button is pressed.
   config.filebrowserBrowseUrl = "/ckeditor/attachment_files";

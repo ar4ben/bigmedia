@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+  before_save :make_preview_img_src_relative
+
   extend FriendlyId
   friendly_id :title, use: :slugged
   acts_as_taggable
@@ -18,6 +20,10 @@ class Article < ActiveRecord::Base
   end
 
   private
+
+  def make_preview_img_src_relative
+    self.preview_img = self.preview_img[/https?:\/\/.*?(\/.*)/,1] if self.preview_img =~ /http/
+  end
 
   def has_category?
     errors.add(:base, 'Должна быть выбрана категория') if categorization.blank?
