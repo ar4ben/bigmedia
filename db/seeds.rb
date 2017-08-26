@@ -5,9 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password', role: 'super_admin')
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.first.add_role :super_admin
 cat = Category.create!(name:'test_cat')
 
 (0..30).each do |id|
-  cat.articles.create!(title: "test_post#{id}", body: "lorem ipsum")
+  cat.articles.create!(title: "test_post#{id}", body: "lorem ipsum", published: true)
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814015515) do
+ActiveRecord::Schema.define(version: 20170822005331) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -34,11 +34,6 @@ ActiveRecord::Schema.define(version: 20170814015515) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
@@ -60,11 +55,13 @@ ActiveRecord::Schema.define(version: 20170814015515) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.string   "slug"
-    t.boolean  "published",   default: false
+    t.boolean  "published",    default: false
+    t.datetime "published_at", default: '2017-08-23 02:53:14', null: false
     t.string   "preview_img"
+    t.integer  "views",        default: 0
   end
 
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true

@@ -4,12 +4,20 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order('created_at desc')
+    @most_popular = Article.where(
+      'published = :t and published_at >= :seven_days_ago', 
+      { t: true, seven_days_ago: Time.now - 7.days }
+    ).order('views desc').limit 6
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @most_popular = []
+    @article.update( 
+      views: @article.views + 1
+    )
   end
 
   private

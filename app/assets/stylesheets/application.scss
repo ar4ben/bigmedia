@@ -19,3 +19,27 @@ html, body {
   border-bottom: 3px solid rgb(175, 209, 218);
   border-radius: 50px 50px 50px 50px 
 }
+.views-comments-thumb div {
+  display: inline-block;
+  padding-right: 5px
+}
+.no-link {
+  text-decoration: none !important;
+}
+.no-link:hover .thumbnail {
+  background-color: #FFEBCD;
+}
+.no-link:hover .thumbnail h3 {
+  text-decoration: underline;
+}
+.most-popular {
+  background-color: #afd1da;
+  padding: 10%;
+  padding-top: 5%;
+}
+.most-popular .views-comments-thumb {
+  border-bottom: 2px solid #8DB8C4;
+}
+.most-popular a {
+  color: black;
+}

@@ -42,8 +42,20 @@
       </div>
       <div class="col-md-3 text-center">
         <h3>Популярное</h3>
-        <div class='container-fluid'>
-          <!-- most popular -->
+        <div class='container-fluid most-popular text-left'>
+          <% @most_popular.each do |popular| %>
+            <h4><%= link_to(popular.title, popular) %></h4>
+            <div class="views-comments-thumb">
+              <div>
+                <span class="glyphicon glyphicon-eye-open"></span>
+                <span><%= popular.views %></span>
+              </div>
+              <div>
+                <span class="glyphicon glyphicon-comment"></span>
+                <span>30</span>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
