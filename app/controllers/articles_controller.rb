@@ -4,7 +4,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.order('created_at desc')
+
+    @articles = Article.order('created_at desc').paginate(:page => params[:page], 
+                                                          :per_page => 18)
     @most_popular = Article.where(
       'published = :t and published_at >= :seven_days_ago', 
       { t: true, seven_days_ago: Time.now - 7.days }

@@ -23,6 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'select2-rails'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
+gem 'will_paginate'
 
 
 
