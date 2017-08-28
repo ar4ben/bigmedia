@@ -9,6 +9,6 @@ AdminUser.create!(email: 'admin@example.com', password: 'password', password_con
 AdminUser.first.add_role :super_admin
 cat = Category.create!(name:'test_cat')
 
-(0..30).each do |id|
-  cat.articles.create!(title: "test_post#{id}", body: "lorem ipsum", published: true)
+(0..31).each do |id|
+  cat.articles.create!(title: "test_post#{id}", body: "lorem ipsum", preview_img: "404.jpg", lead: "lorem", published: true)
 end

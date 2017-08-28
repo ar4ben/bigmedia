@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_params :title, :body, :preview_img, :published, tag_list: [], category_ids: []
+  permit_params :title, :body, :preview_img, :published, :lead, tag_list: [], category_ids: []
 
   filter :title
   filter :body
@@ -70,6 +70,7 @@ ActiveAdmin.register Article do
       input :body, :as => :ckeditor
     end
     inputs :preview_img
+    inputs :lead
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  
