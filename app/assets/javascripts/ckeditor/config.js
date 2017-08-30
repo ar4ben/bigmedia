@@ -8,18 +8,7 @@ CKEDITOR.editorConfig = function( config )
   // Define changes to default configuration here. For example:
   // config.language = 'fr';
   // config.uiColor = '#AADC6E';
-  config.extraPlugins = 'autogrow';
-  config.extraPlugins = 'mediaembed';
-  config.extraPlugins = 'dialog';
-  config.extraPlugins = 'dialogui';
-  config.extraPlugins = 'widget';
-  config.extraPlugins = 'lineutils';
-  config.extraPlugins = 'clipboard';
-  config.extraPlugins = 'notification';
-  config.extraPlugins = 'toolbar';
-  config.extraPlugins = 'button';
-  config.extraPlugins = 'widgetselection';
-  config.extraPlugins = 'image2';
+  config.extraPlugins = 'autogrow,mediaembed,dialog,dialogui,widget,lineutils,clipboard,notification,toolbar,button,widgetselection,image2'
   
   config.stylesSet = 'my_styles:/assets/ckeditor/extrastyles.js';
   /* Filebrowser routes */
