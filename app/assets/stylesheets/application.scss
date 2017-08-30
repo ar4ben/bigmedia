@@ -1,7 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .affix, .affix-top, .affix-bottom {
         position: static;
     }
@@ -10,12 +10,25 @@
 html, body {
   background: #c9f1fd  
 }
+.logo {
+  font-weight: 900;
+  letter-spacing: -3px;
+  }
+h1,h2,h3,h4,h5,body {
+  font-family: Ubuntu,"Helvetica Neue",sans-serif;
+}
+.articles {
+  margin-top: 20px;
+}
 .thumbnail {
   background: #c9f1fd;
   border: none;
 }
 .main-search {
   margin-top: 20px;
+}
+.main-search #searchinput {
+  width: 50%;
 }
 .main-list {
   border: none;
