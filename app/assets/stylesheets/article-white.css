@@ -1,0 +1,27 @@
+.cool-borders {
+  background: white;
+}
+.article-body {
+  margin-bottom: 50px;
+  font-size: 17px;
+  line-height: 1.50;
+}
+.article-body ol {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 2;
+}
+blockquote:before {
+  content: "\201C";
+  font-weight: bold;
+  font-size: 80px;
+  color: #8DB8C4;
+  font-family: "Times New Roman", Georgia, Serif;   
+}
+blockquote p {
+  margin-top: -50px;
+  font-style: italic;
+}
+blockquote {
+  border-color: #afd1da;
+}

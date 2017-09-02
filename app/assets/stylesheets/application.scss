@@ -8,7 +8,7 @@
 }
 
 html, body {
-  background: #c9f1fd  
+  background: #c9f1fd;  
 }
 .logo {
   font-weight: 900;
@@ -16,6 +16,7 @@ html, body {
   }
 h1,h2,h3,h4,h5,body {
   font-family: Ubuntu,"Helvetica Neue",sans-serif;
+  word-wrap: break-word;
 }
 .articles {
   margin-top: 20px;
@@ -34,6 +35,7 @@ h1,h2,h3,h4,h5,body {
   border: none;
 }
 .cool-borders {
+  /*background: white;*/
   border-top: 3px solid rgb(175, 209, 218);
   border-bottom: 3px solid rgb(175, 209, 218);
   border-radius: 50px 50px 50px 50px 
@@ -65,6 +67,9 @@ h1,h2,h3,h4,h5,body {
 .affix {
       top: 1px;
 }
+.affix-menu {
+  margin-bottom: 50px;
+}
 .simple_pagination {
   text-align: center;
   padding: 1em;
@@ -94,4 +99,5 @@ h1,h2,h3,h4,h5,body {
   font-size: 54px;
   font-weight: bold;
   letter-spacing: -2px;
+  word-wrap: break-word;
 }
