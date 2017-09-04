@@ -11,6 +11,18 @@
   padding-bottom: 10px;
   line-height: 2;
 }
+.thumbnail {
+  background: inherit;
+}
+.no-link:hover .thumbnail {
+  background-color: inherit;
+}
+.most-relevant {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  border-left: 5px solid rgb(175, 209, 218);
+  background-color: rgb(245, 253, 255);
+}
 blockquote:before {
   content: "\201C";
   font-weight: bold;

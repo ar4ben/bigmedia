@@ -1,31 +1,31 @@
 <div class='container-fluid articles'>
   <% @articles.each_slice(3) do |slice| %>
     <div class="row">
-    <% slice.each do |article| %>
-      <div class="col-sm-6 col-md-4">
-        <%= link_to(article, class: "no-link") do %>
-          <div class="thumbnail">
-              <%= image_tag("http://localhost:3000/ckeditor_assets/pictures/15/thumb_38.jpg", class: 'img-circle') %>
-            <div class="caption">
-              <div class="views-comments-thumb">
-                <div>
-                  <span class="glyphicon glyphicon-eye-open"></span>
-                  <span><%= article.views %></span>
+      <% slice.each do |article| %>
+        <div class="col-sm-6 col-md-4">
+          <%= link_to(article, class: "no-link") do %>
+            <div class="thumbnail">
+                <%= image_tag("http://localhost:3000/ckeditor_assets/pictures/15/thumb_38.jpg", class: 'img-circle') %>
+              <div class="caption">
+                <div class="views-comments-thumb">
+                  <div>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span><%= article.views %></span>
+                  </div>
+                  <div>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span>30</span>
+                  </div>
                 </div>
-                <div>
-                  <span class="glyphicon glyphicon-comment"></span>
-                  <span>30</span>
+                <div class="article-desc">
+                  <h3><%= article.title %></h3>
+                  <p class="text-left"><%= article.lead %></p>
                 </div>
-              </div>
-              <div class="article-desc">
-                <h3><%= article.title %></h3>
-                <p class="text-left"><%= article.lead %></p>
               </div>
             </div>
-          </div>
-        <% end %>
-      </div>
-    <% end %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

@@ -1,10 +1,41 @@
 <% content_for :head do %>
-  <%= stylesheet_link_tag "article-white" %>
+  <%= stylesheet_link_tag "article-show" %>
 <% end %>
-  <h1 class="article-title">
-    <%= @article.title %>
-  </h1>
+<h1 class="article-title">
+  <%= @article.title %>
+</h1>
 <div class=" article-body text-left">
-
   <%= @article.body.html_safe %>
 </div>
+<% unless @relevant_articles.empty? %>
+  <div class='most-relevant'>
+    <h3>Похожие материалы</h3>
+    <div class="row">
+      <% @relevant_articles.each do |article| %>
+        <div class="col-sm-6 col-md-4">
+          <%= link_to(article, class: "no-link") do %>
+            <div class="thumbnail">
+                <%= image_tag("http://localhost:3000/ckeditor_assets/pictures/15/thumb_38.jpg", class: 'img-circle') %>
+              <div class="caption">
+                <div class="views-comments-thumb">
+                  <div>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span><%= article.views %></span>
+                  </div>
+                  <div>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span>30</span>
+                  </div>
+                </div>
+                <div class="article-desc">
+                  <h3><%= article.title %></h3>
+                  <p class="text-left"><%= article.lead %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
