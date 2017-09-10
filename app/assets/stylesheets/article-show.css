@@ -23,6 +23,9 @@
   border-left: 5px solid rgb(175, 209, 218);
   background-color: rgb(245, 253, 255);
 }
+.comments {
+  margin-bottom: 50px;
+}
 blockquote:before {
   content: "\201C";
   font-weight: bold;
