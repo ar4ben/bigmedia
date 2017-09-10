@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pop not dead</title>
+  <title>
+    <%= yield(:title) + ' | ' if content_for?(:title) %>
+    Pop not dead
+  </title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= yield :head %>
+  <%= yield(:head) if content_for?(:head) %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>

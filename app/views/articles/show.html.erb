@@ -1,11 +1,21 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag "article-show" %>
+  <%= stylesheet_link_tag "social-likes_flat" %>
+<% end %>
+<% content_for :title do %>
+  <%= @article.title %>
 <% end %>
 <h1 class="article-title">
   <%= @article.title %>
 </h1>
 <div class=" article-body text-left">
   <%= @article.body.html_safe %>
+</div>
+<div class="social-block social-likes social-likes_light text-left">
+  <div>Хотите поделиться?</div>
+  <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+  <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+  <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
 </div>
 <% unless @relevant_articles.empty? %>
   <div class='most-relevant'>
