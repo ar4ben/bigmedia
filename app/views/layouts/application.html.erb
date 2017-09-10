@@ -58,7 +58,7 @@
                 </div>
                 <div>
                   <span class="glyphicon glyphicon-comment"></span>
-                  <span>30</span>
+                  <span class="disqus-comment-count" data-disqus-url='<%= article_url(popular) %>'>0</span>
                 </div>
               </div>
             <% end %>
@@ -67,5 +67,6 @@
       </div> <!-- end of column with popular block -->
     </div><!-- end of row with columns -->
   </div> <!-- end of cool borders -->
+  <%= javascript_include_tag 'disqus/count', id: "dsq-count-scr", async: true %>
 </body>
 </html>

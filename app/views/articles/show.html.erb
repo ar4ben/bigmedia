@@ -24,7 +24,7 @@
                   </div>
                   <div>
                     <span class="glyphicon glyphicon-comment"></span>
-                    <span>30</span>
+                    <span class="disqus-comment-count" data-disqus-url='<%= article_url(article) %>'>0</span>
                   </div>
                 </div>
                 <div class="article-desc">
@@ -39,3 +39,19 @@
     </div>
   </div>
 <% end %>
+<div class="comments">
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+    this.page.url = '<%= request.original_url %>'
+    this.page.identifier = 'articles-<%= @article.id %>'
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://popnotdead.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+</div>
