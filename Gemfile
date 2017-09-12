@@ -9,14 +9,15 @@ gem 'cancancan', '~> 1.10'
 gem 'ckeditor'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
-gem "figaro"
+gem 'figaro'
 gem 'font-awesome-rails'
 gem 'friendly_id'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'meta-tags'
 gem 'paperclip'
 gem 'rails', '4.2.1'
-gem "rolify", '5.1.0'
+gem 'rolify', '5.1.0'
 gem 'rubocop', '~> 0.48.1', require: false
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc

@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>
-    <%= yield(:title) + ' | ' if content_for?(:title) %>
-    Pop not dead
+    <%= yield(:title).strip + ' | ' if content_for?(:title) %>Pop not dead
   </title>
+  <%= display_meta_tags %>
+  <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= yield(:head) if content_for?(:head) %>
   <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="top-block">
