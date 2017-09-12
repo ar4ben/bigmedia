@@ -2,21 +2,22 @@
 <html>
 <head>
   <title>
-    <%= yield(:title).strip + ' | ' if content_for?(:title) %>Pop not dead
+    <%= yield(:title).strip + " | " if content_for?(:title) %>Pop not dead
   </title>
   <%= display_meta_tags %>
+  <meta name=”viewport” content=”width=device-width, initial-scale="1">
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= stylesheet_link_tag    "application", media: "all" %>
   <%= yield(:head) if content_for?(:head) %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag "application" %>
 </head>
 <body>
   <div class="top-block">
-    <div class='container'>
-      <div class='row'>
+    <div class="container">
+      <div class="row">
         <div class="col-md-9 text-center">
-          <h1 class='logo'>
-            <%= link_to 'Pop not dead', root_path %>
+          <h1 class="logo">
+            <%= link_to "Pop not dead", root_path %>
           </h1>
         </div>
         <div class="col-md-3 text-center">
@@ -27,10 +28,10 @@
         </div>
       </div>
     </div>
-    <div class='container'>
-      <div class='row'>
+    <div class="container">
+      <div class="row">
         <div class="col-md-9 text-center">
-              <div class='row'>
+              <div class="row">
                 <div class="col-md-6 text-center">
                   <a><h4>Категории</h4></a>
                 </div>
@@ -43,15 +44,15 @@
       </div>
     </div>
   </div> <!-- end of top-block -->
-  <div class='container cool-borders'>
-    <div class='row'>
+  <div class="container cool-borders">
+    <div class="row">
       <div class="col-md-9 text-center">
         <%= yield %>
       </div>
       <div class="col-md-3 text-center">
         <div class="affix-menu" data-spy="affix">
           <h3>Популярное</h3>
-          <div class='container-fluid most-popular text-left'>
+          <div class="container-fluid most-popular text-left">
             <% @most_popular.each do |popular| %>
               <h4><%= link_to(popular.title, popular) %></h4>
               <div class="views-comments-thumb">
@@ -61,7 +62,7 @@
                 </div>
                 <div>
                   <span class="glyphicon glyphicon-comment"></span>
-                  <span class="disqus-comment-count" data-disqus-url='<%= article_url(popular) %>'>0</span>
+                  <span class="disqus-comment-count" data-disqus-url="<%= article_url(popular) %>">0</span>
                 </div>
               </div>
             <% end %>
@@ -70,6 +71,6 @@
       </div> <!-- end of column with popular block -->
     </div><!-- end of row with columns -->
   </div> <!-- end of cool borders -->
-  <%= javascript_include_tag 'disqus/count', id: "dsq-count-scr", async: true %>
+  <%= javascript_include_tag "disqus/count", id: "dsq-count-scr", async: true %>
 </body>
 </html>
