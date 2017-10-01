@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ошибка</title>
+  <%= csrf_meta_tags %>
+  <style>
+    body {
+        background: #fff;
+        font-family: Helvetica, Arial, Sans-Serif;
+        font-size: 14px;
+    }
+    .error_container {
+        display: block;
+        margin: auto;
+        margin: 10% auto 0 auto;
+        width: 40%;
+    }
+  </style>
+</head>
+<body>
+    <div class="error_container">
+        <%= yield %>
+    </div>
+</body>
+</html>

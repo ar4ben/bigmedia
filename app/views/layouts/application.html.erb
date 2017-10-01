@@ -17,7 +17,7 @@
       <div class="row">
         <div class="col-md-9 text-center">
           <h1 class="logo">
-            <%= link_to "Pop not dead", root_path %>
+            <%= link_to "POP NOT DEAD", root_path %>
           </h1>
         </div>
         <div class="col-md-3 text-center">
@@ -50,24 +50,27 @@
         <%= yield %>
       </div>
       <div class="col-md-3 text-center">
-        <div class="affix-menu" data-spy="affix">
-          <h3>Популярное</h3>
-          <div class="container-fluid most-popular text-left">
-            <% @most_popular.each do |popular| %>
-              <h4><%= link_to(popular.title, popular) %></h4>
-              <div class="views-comments-thumb">
-                <div>
-                  <span class="glyphicon glyphicon-eye-open"></span>
-                  <span><%= popular.views %></span>
+        <%# for 404 pages @most_popular does not exist %>
+        <% if @most_popular %>
+          <div>
+            <h3>Популярное</h3>
+            <div class="container-fluid most-popular text-left">
+              <% @most_popular.each do |popular| %>
+                <h4><%= link_to(popular.title, popular) %></h4>
+                <div class="views-comments-thumb">
+                  <div>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span><%= popular.views %></span>
+                  </div>
+                  <div>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <span class="disqus-comment-count" data-disqus-url="<%= article_url(popular) %>">0</span>
+                  </div>
                 </div>
-                <div>
-                  <span class="glyphicon glyphicon-comment"></span>
-                  <span class="disqus-comment-count" data-disqus-url="<%= article_url(popular) %>">0</span>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div> <!-- end of affix menu -->
+              <% end %>
+            </div>
+          </div> <!-- end of popular menu -->
+        <% end %>
       </div> <!-- end of column with popular block -->
     </div><!-- end of row with columns -->
   </div> <!-- end of cool borders -->

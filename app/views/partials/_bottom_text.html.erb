@@ -1,0 +1,24 @@
+<div class="col-sm-6 col-md-4 article-item">
+  <%= link_to(article, class: "no-link") do %>
+    <div class="image-container" style="background-image: url('https://unsplash.it/<%=rand(300..500)%>/<%=rand(300..500)%>/?random'); background-position: center; width: 100%; background-size: cover;">
+     </div>
+    <div class="text-container text-container-bottom">
+      <div class="text-vertical">
+        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+        <div class="views-comments-thumb">
+          <div>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <span><%= article.views %></span>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-comment"></span>
+            <span class="disqus-comment-count" data-disqus-url='<%= article_url(article) %>'>0</span>
+          </div>
+        </div>
+        <div class="article-desc">
+          <h3><%= article.title %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

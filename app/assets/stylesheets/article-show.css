@@ -1,10 +1,28 @@
 .cool-borders {
   background: white;
+  padding-top: 15px;
+}
+.title-block {
+  padding-bottom: 5px;
+  margin-bottom: 5%;
+  border-bottom: 2px solid darkgrey;
+  color: darkslategrey;
+}
+.article-title {
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  word-wrap: break-word;
 }
 .article-body {
   margin-bottom: 50px;
-  font-size: 17px;
+  font-size: 1.9rem;
   line-height: 1.50;
+}
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  background-color: pink;
 }
 .article-body ol {
   padding-top: 10px;
@@ -13,6 +31,7 @@
 }
 .thumbnail {
   background: inherit;
+  border: none;
 }
 .no-link:hover .thumbnail {
   background-color: inherit;
@@ -20,8 +39,8 @@
 .most-relevant {
   margin-top: 20px;
   margin-bottom: 50px;
-  border-left: 5px solid rgb(175, 209, 218);
-  background-color: rgb(245, 253, 255);
+  border-top: 2px solid darkgrey;
+  border-bottom: 2px solid darkgrey;
 }
 .comments {
   margin-bottom: 50px;
@@ -29,17 +48,23 @@
 div .social-block {
   display: block;
 }
-blockquote:before {
-  content: "\201C";
-  font-weight: bold;
-  font-size: 80px;
-  color: #8DB8C4;
-  font-family: "Times New Roman", Georgia, Serif;   
-}
-blockquote p {
-  margin-top: -50px;
-  font-style: italic;
-}
 blockquote {
   border-color: #afd1da;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-size: 2rem;
+}
+blockquote:before {
+  color: #8DB8C4;
+  font-family: "Times New Roman", Georgia, Serif;  
+  font-weight: bold;
+  content: "\201C";
+  font-size: 4em;
+  line-height: 0.3em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+
+}
+blockquote p {
+  font-style: italic;
 }

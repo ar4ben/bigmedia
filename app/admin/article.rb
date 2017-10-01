@@ -69,7 +69,9 @@ ActiveAdmin.register Article do
     inputs do
       input :body, :as => :ckeditor
     end
-    inputs :preview_img
+    inputs do
+      input :preview_img
+    end
     inputs :lead
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}

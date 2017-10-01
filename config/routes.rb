@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -9,6 +8,12 @@ Rails.application.routes.draw do
   resources :articles
 
   root 'articles#index'
+
+  if Rails.env.production? || Rails.env.development?
+    get '404', :to => 'application#page_not_found'
+    get '422', to: 'application#server_error'
+    get '500', to:  'application#server_error'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

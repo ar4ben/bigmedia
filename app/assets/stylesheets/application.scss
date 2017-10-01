@@ -1,37 +1,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 992px) {
-    .affix, .affix-top, .affix-bottom {
-        position: static;
-    }
+@font-face {
+  font-family: "Muller Light";
+  src:font-url('/assets/MullerNarrow-Light.otf');
+}
+@font-face {
+  font-family: "Muller Italic";
+  src:font-url('/assets/MullerNarrow-LightItalic.otf');
 }
 
 html, body {
-  background: #c9f1fd;  
+  background: white;  
+}
+.articles .row {
+  margin-bottom: 50px;
 }
 .logo {
-  font-weight: 900;
+  font-size: 38px;
+  font-weight: 400;
   letter-spacing: -3px;
-  }
+}
 .logo a {
   color: black;
   text-decoration: none;
 }
 h1,h2,h3,h4,h5,body {
-  font-family: Ubuntu,"Helvetica Neue",sans-serif;
+  font-family: "Muller Light","Helvetica Neue",sans-serif;
   word-wrap: break-word;
 }
 .articles {
-  margin-top: 20px;
-}
-.thumbnail {
-  background: #c9f1fd;
-  border: none;
-}
-.thumbnail h3 {
-  font-size: 20px;
-  font-weight: 700;
+  margin-top: 30px;
 }
 .main-search {
   margin-top: 20px;
@@ -43,8 +42,8 @@ h1,h2,h3,h4,h5,body {
   border: none;
 }
 .cool-borders {
-  border-top: 3px solid rgb(175, 209, 218);
-  border-bottom: 3px solid rgb(175, 209, 218);
+  border-top: 3px solid darkgrey;
+  border-bottom: 3px solid darkgrey;
   border-radius: 50px 50px 50px 50px 
 }
 .views-comments-thumb div {
@@ -54,28 +53,25 @@ h1,h2,h3,h4,h5,body {
 .no-link {
   text-decoration: none !important;
 }
-.no-link:hover .thumbnail {
+.no-link:hover {
   background-color: #FFEBCD;
 }
-.no-link:hover .thumbnail h3 {
+.no-link:hover h3 {
   text-decoration: underline;
 }
+.no-link:hover .image-container, .no-link:hover .big-image-container, .no-link:hover .text-container  {
+  opacity: 0.8;  
+}
 .most-popular {
-  background-color: #afd1da;
+  background-color: blue;
   padding: 10%;
   padding-top: 5%;
 }
 .most-popular .views-comments-thumb {
-  border-bottom: 2px solid #8DB8C4;
+  border-bottom: 2px solid pink;
 }
 .most-popular a {
-  color: black;
-}
-.affix {
-      top: 1px;
-}
-.affix-menu {
-  margin-bottom: 50px;
+  color: white;
 }
 .simple_pagination {
   text-align: center;
@@ -88,7 +84,7 @@ h1,h2,h3,h4,h5,body {
   .simple_pagination .current {
     font-style: normal;
     font-weight: bold;
-    background-color: #afd1da;
+    background-color: pink;
     display: inline-block;
     width: 1.4em;
     height: 1.4em;
@@ -102,9 +98,48 @@ h1,h2,h3,h4,h5,body {
     color: black; }
     .simple_pagination a:hover, .simple_pagination a:focus {
       text-decoration: underline; }
-.article-title {
-  font-size: 54px;
-  font-weight: bold;
-  letter-spacing: -2px;
-  word-wrap: break-word;
+.article-desc h3 {
+  margin: 0px;
+  font-weight: 600;
+  font-size: 18px;
+  color: black;
+  text-transform: uppercase;
+}
+.text-container {
+    overflow:hidden;
+    text-overflow: ellipsis;
+    content: "";
+    position:relative;
+    background-color: pink;
+    display:table;
+    width: 100%;
+    color: black;
+}
+.text-container-top {
+    margin-bottom: 10px;
+    background-color: darkgrey;
+}
+.text-container-bottom {
+    margin-top: 10px;  
+}
+.text-container .glyphicon-chevron-up, .text-container .glyphicon-chevron-down, .text-container .glyphicon-chevron-left {
+  color: #6d6b6b;
+}
+.text-vertical {
+  display:table-cell;
+  vertical-align: middle;
+}
+.image-container {
+  margin-bottom: 10px;
+}
+.article-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.big-image-container {
+  margin-bottom: 10px;
+}
+.error-text {
+  font-size: 20px;
+  margin: 5%;
 }

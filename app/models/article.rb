@@ -21,6 +21,24 @@ class Article < ActiveRecord::Base
     slug.nil? || title_changed?
   end
 
+  def self.find_with_pagination(params = {})
+    WillPaginate::Collection.create(params[:page].to_i < 1 ? 1 : params[:page], per_page_for_page(params[:page])) do |pager|
+      result = Article.order('published_at desc').limit(pager.per_page).offset(offset_for_page(params[:page]))
+      pager.replace result
+      unless pager.total_entries
+        pager.total_entries = self.count
+      end
+    end
+  end
+
+  def self.offset_for_page(page_number)
+    page_number.to_i > 1 ? ((page_number.to_i - 2) * 19 + 18) : 0
+  end
+
+  def self.per_page_for_page(page_number)
+    page_number.to_i > 1 ? 18 : 19
+  end
+
   private
 
   def make_preview_img_src_relative
@@ -34,4 +52,5 @@ class Article < ActiveRecord::Base
   def set_published_at
     self.published_at = Time.now if self.published_changed? and self.published == true
   end
+
 end
