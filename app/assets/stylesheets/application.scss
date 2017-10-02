@@ -5,10 +5,6 @@
   font-family: "Muller Light";
   src:font-url('/assets/MullerNarrow-Light.otf');
 }
-@font-face {
-  font-family: "Muller Italic";
-  src:font-url('/assets/MullerNarrow-LightItalic.otf');
-}
 
 html, body {
   background: white;  
@@ -34,9 +30,6 @@ h1,h2,h3,h4,h5,body {
 }
 .main-search {
   margin-top: 20px;
-}
-.main-search #searchinput {
-  width: 50%;
 }
 .main-list {
   border: none;

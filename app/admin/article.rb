@@ -26,6 +26,9 @@ ActiveAdmin.register Article do
 
   show do
     attributes_table do
+      row :preview do |article| 
+        link_to "Посмотреть в отдельной вкладке", article_path(article), target: :_blank
+      end
       default_attribute_table_rows.each do |field|
         if field == :body
           row :body do |article| 
@@ -39,7 +42,6 @@ ActiveAdmin.register Article do
           row field
         end
       end
-      
     end
   end
 
