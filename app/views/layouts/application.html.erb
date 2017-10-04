@@ -63,8 +63,10 @@
                     <span><%= popular.views %></span>
                   </div>
                   <div>
-                    <span class="glyphicon glyphicon-comment"></span>
-                    <span class="disqus-comment-count" data-disqus-url="<%= article_url(popular) %>">0</span>
+                    <%= link_to("#{article_path(popular)}#comments_section") do %>
+                      <span class="glyphicon glyphicon-comment"></span>
+                      <span class="disqus-comment-count" data-disqus-url="<%= article_url(popular) %>">0</span>
+                    <% end %>
                   </div>
                 </div>
               <% end %>

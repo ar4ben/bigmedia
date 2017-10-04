@@ -9,6 +9,7 @@ class Article < ActiveRecord::Base
   validate :has_category?
   validates :title, :slug, presence: true, uniqueness: true
   validates :body, :preview_img, :lead, presence: true
+  validates :tag_list, presence: true
 
   before_save :make_preview_img_src_relative
   before_save :set_published_at

@@ -43,6 +43,9 @@ h1,h2,h3,h4,h5,body {
   display: inline-block;
   padding-right: 5px
 }
+.views-comments-thumb a {
+  color: inherit;
+}
 .no-link {
   text-decoration: none !important;
 }
@@ -63,7 +66,7 @@ h1,h2,h3,h4,h5,body {
 .most-popular .views-comments-thumb {
   border-bottom: 2px solid pink;
 }
-.most-popular a {
+.most-popular h4 a {
   color: white;
 }
 .simple_pagination {

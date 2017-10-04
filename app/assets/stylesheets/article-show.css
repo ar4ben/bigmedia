@@ -8,6 +8,9 @@
   border-bottom: 2px solid darkgrey;
   color: darkslategrey;
 }
+.title-block a {
+  color: darkslategrey;
+}
 .article-title {
   font-size: 35px;
   font-weight: bold;
