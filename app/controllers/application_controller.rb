@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
-    before_action :set_most_popular, only: [:index, :show]
-  before_action :set_categories_rubrics, only: [:index, :show]
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  
+  before_action :set_most_popular, only: [:index, :show]
+  before_action :set_categories_rubrics, only: [:index, :show]
 
   def access_denied(exception)
     Rails.logger.error "access denied! '#{exception.message}'"
@@ -27,7 +28,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def set_most_popular
+  def set_most_popular
     @most_popular = Article.where(
       'published = :t and published_at >= :seven_days_ago', 
       { t: true, seven_days_ago: Time.now - 7.days }

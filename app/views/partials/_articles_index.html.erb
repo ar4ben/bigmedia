@@ -1,0 +1,19 @@
+<div class='container-fluid articles'>
+  <% if @first then article = @articles.shift %>
+    <%= render partial: 'partials/first_article', locals: {article: article}  %>
+  <% end %>
+  <% @articles.each_slice(3) do |slice| %>
+    <div class="row">
+      <% slice.each_with_index do |article, index| %>
+        <% if index == 1 %>
+          <%= render partial: 'partials/top_text', locals: {article: article}  %>
+        <% else %>
+          <%= render partial: 'partials/bottom_text', locals: {article: article}  %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<div class="simple_pagination">
+  <%= will_paginate @articles %>
+</div>

@@ -3,13 +3,14 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   # GET /categories.json
-  def index
-    @categories = Category.all
-  end
+  #def index
+  #  @categories = Category.all
+  #end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
+    @articles = @category.articles.order('published_at desc').paginate(:page => params[:page], :per_page => 18)
   end
 
   private

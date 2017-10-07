@@ -1,9 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @rubric.name %>
-</p>
-
-<%= link_to 'Edit', edit_rubric_path(@rubric) %> |
-<%= link_to 'Back', rubrics_path %>
+<%= render partial: 'partials/articles_index' %>
+<% if @articles.empty? %>
+  <p>Ничего не найдено</p>
+<% end %>

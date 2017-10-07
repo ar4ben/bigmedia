@@ -23,9 +23,9 @@ class Article < ActiveRecord::Base
     slug.nil? || title_changed?
   end
 
-  def self.find_with_pagination(params = {})
+  def self.find_with_pagination(params = {}, condition)
     WillPaginate::Collection.create(params[:page].to_i < 1 ? 1 : params[:page], per_page_for_page(params[:page])) do |pager|
-      result = Article.where(published: true).order('published_at desc').limit(pager.per_page).offset(offset_for_page(params[:page]))
+      result = Article.where(condition).order('published_at desc').limit(pager.per_page).offset(offset_for_page(params[:page]))
       pager.replace result
       unless pager.total_entries
         pager.total_entries = self.count

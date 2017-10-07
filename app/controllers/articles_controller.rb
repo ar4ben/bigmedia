@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.find_with_pagination(params)
+    @articles = Article.find_with_pagination(params, { published: true })
     @first = true if [nil,"1"].include? params[:page]
   end
 
@@ -25,6 +25,4 @@ class ArticlesController < ApplicationController
   def set_article
     @article = Article.friendly.find(params[:id])
   end
-
-
 end

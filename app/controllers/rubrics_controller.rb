@@ -3,13 +3,14 @@ class RubricsController < ApplicationController
 
   # GET /rubrics
   # GET /rubrics.json
-  def index
-    @rubrics = Rubric.all
-  end
+  #def index
+  #  @rubrics = Rubric.all
+  #end
 
   # GET /rubrics/1
   # GET /rubrics/1.json
   def show
+    @articles = @rubric.articles.order('published_at desc').paginate(:page => params[:page], :per_page => 18)
   end
 
   private
