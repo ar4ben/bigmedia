@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
 
   has_many :categorization
   has_many :categories, through: :categorization
+  belongs_to :rubric
 
   validate :has_category?
   validates :title, :slug, presence: true, uniqueness: true

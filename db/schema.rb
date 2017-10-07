@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826005618) do
+ActiveRecord::Schema.define(version: 20171007003545) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -63,8 +63,10 @@ ActiveRecord::Schema.define(version: 20170826005618) do
     t.string   "preview_img"
     t.integer  "views",        default: 0
     t.text     "lead"
+    t.integer  "rubric_id"
   end
 
+  add_index "articles", ["rubric_id"], name: "index_articles_on_rubric_id"
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
 
   create_table "categories", force: :cascade do |t|
@@ -110,6 +112,15 @@ ActiveRecord::Schema.define(version: 20170826005618) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "rubrics", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "slug"
+  end
+
+  add_index "rubrics", ["slug"], name: "index_rubrics_on_slug", unique: true
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

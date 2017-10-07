@@ -1,9 +1,10 @@
 ActiveAdmin.register Article do
-  permit_params :title, :body, :preview_img, :published, :lead, tag_list: [], category_ids: []
+  permit_params :title, :body, :preview_img, :published, :lead, :rubric_id, tag_list: [], category_ids: []
 
   filter :title
   filter :body
   filter :categories, multiple: :true, :as => :select, input_html: { class: 'prettyselect'}
+  filter :rubric, multiple: :true, :as => :select, input_html: { class: 'prettyselect'}
   filter :tags,
           as: :select,
           multiple: :true,
@@ -19,6 +20,7 @@ ActiveAdmin.register Article do
   index do
     column :title
     column (:category) { |user| user.categories.map(&:name).join(', ')}
+    column :rubric
     column :created_at
     column :published
     actions
@@ -78,6 +80,9 @@ ActiveAdmin.register Article do
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  
+    inputs do
+      input :rubric, :as => :select, input_html: { class: 'prettyselect'}
+    end
     inputs do
       input :tag_list,
         as: :select,
