@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap/affix
+//= require bootstrap/dropdown
 //= require_directory .

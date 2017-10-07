@@ -33,10 +33,24 @@
         <div class="col-md-9 text-center">
               <div class="row">
                 <div class="col-md-6 text-center">
-                  <a><h4>Категории</h4></a>
+                  <span class="dropdown main-nav">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Категории <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <% @categories.each do |category| %>
+                            <li><%= link_to(category.name, category) %></li>
+                          <% end %>
+                        </ul>
+                  </span>
                 </div>
                 <div class="col-md-6 text-center">
-                  <a><h4>Рубрики</h4></a>
+                  <span class="dropdown main-nav">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Рубрики <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <% @rubrics.each do |category| %>
+                            <li><%= link_to(category.name, category) %></li>
+                          <% end %>
+                        </ul>
+                  </span>
                 </div>
               </div>
         </div>

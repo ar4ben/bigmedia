@@ -139,3 +139,15 @@ h1,h2,h3,h4,h5,body {
   font-size: 20px;
   margin: 5%;
 }
+.main-nav {
+  font-size: 18px;
+}
+.main-nav .dropdown-menu {
+  opacity: 0.8;
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.main-nav .dropdown-menu li a:hover {
+    background-color: black;
+    color: white;
+}
