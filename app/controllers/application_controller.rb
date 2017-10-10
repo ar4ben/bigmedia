@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   before_action :set_most_popular, only: [:index, :show]
-  before_action :set_categories_rubrics, only: [:index, :show]
+  before_action :set_categories_rubrics
 
   def access_denied(exception)
     Rails.logger.error "access denied! '#{exception.message}'"

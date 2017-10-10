@@ -19,7 +19,8 @@
       </div>
     </div>
     <div class="image-container" style="background-image: url('https://unsplash.it/<%=rand(300..500)%>/<%=rand(300..500)%>/?random'); background-position: center; width: 100%; background-size: cover;">
-     </div>
+      <%= render partial: 'partials/category_rubric_tags', locals: { article: article } %>
+    </div>
 
   <% end %>
 </div>

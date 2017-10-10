@@ -9,7 +9,7 @@
   <h1 class="article-title">
     <%= @article.title.strip %>
   </h1>
-  <div class="text-left">
+  <div class="text-left left-title-block">
       <%= @article.updated_at.strftime("%d-%m-%Y") %> |
       <span class="glyphicon glyphicon-eye-open"></span>
       <span><%= @article.views %></span> |
@@ -17,6 +17,21 @@
         <span class="glyphicon glyphicon-comment"></span>
         <span class="disqus-comment-count" data-disqus-url='<%= article_url(@article) %>'>0</span>
       <% end %>
+  </div>
+  <div class="text-right">
+    <span class="category_tag">
+      <% @article.categories.each_with_index do |category, index| %>
+        <span>
+          <%= "," if index > 0 %>
+          <%= link_to(category.name, category )%>
+        </span>
+      <% end %>
+    </span>
+    <% if @article.rubric %>
+      <span class="rubric_tag">
+        <%= link_to(@article.rubric.name, @article.rubric) %>
+      </span>
+    <% end %>
   </div>
 </div>
 <div class=" article-body text-left">
@@ -63,7 +78,7 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_loaded = false;
-    var disqus_shortname = 'popnotdead'; //Add your shortname here
+    var disqus_shortname = 'popnotdead'; 
     function disqus() {
         if (!disqus_loaded)  {
             disqus_loaded = true;
@@ -75,7 +90,7 @@
             document.getElementsByTagName("body")[0])
             .appendChild(e);
             //Hide the button after opening
-            document.getElementById("show-comments").style.display = "none";
+            //document.getElementById("show-comments").style.display = "none";
         }
     }
   </script>

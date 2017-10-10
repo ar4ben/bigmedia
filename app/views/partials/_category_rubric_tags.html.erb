@@ -1,0 +1,13 @@
+<span class='category_tag'>
+  <% article.categories.each_with_index do |category, index| %>
+    <span>
+      <%= "," if index > 0 %>
+      <%= category.name %>
+    </span>
+  <% end %>
+</span>
+<% if article.rubric %>
+  <span class='rubric_tag'>
+    <%= article.rubric.name %>
+  </span>
+<% end %>

@@ -37,7 +37,8 @@ h1,h2,h3,h4,h5,body {
 .cool-borders {
   border-top: 3px solid darkgrey;
   border-bottom: 3px solid darkgrey;
-  border-radius: 50px 50px 50px 50px 
+  border-radius: 50px 50px 50px 50px;
+  padding-top: 15px; 
 }
 .views-comments-thumb div {
   display: inline-block;
@@ -126,6 +127,7 @@ h1,h2,h3,h4,h5,body {
   vertical-align: middle;
 }
 .image-container {
+  position: relative;
   margin-bottom: 10px;
 }
 .article-item {
@@ -133,6 +135,7 @@ h1,h2,h3,h4,h5,body {
   padding-right: 5px;
 }
 .big-image-container {
+  position: relative;
   margin-bottom: 10px;
 }
 .error-text {
@@ -148,6 +151,45 @@ h1,h2,h3,h4,h5,body {
   text-transform: uppercase;
 }
 .main-nav .dropdown-menu li a:hover {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
+}
+.articles .category_tag, .articles .rubric_tag {
+  position: absolute;
+}
+.articles .rubric_tag {
+  bottom: 0;
+  right: 0;
+}
+.articles .category_tag {
+  top: 0;
+  left: 0;
+}
+.rubric_tag {
+  background-color: pink;
+  color: blue;
+  padding: 2px;
+}
+.category_tag {
+  background-color: blue;
+  padding: 2px;
+}
+.category_tag, .title-block .category_tag a {
+  color: pink;
+}
+.rubric_tag, .title-block .rubric_tag a {
+  color: blue;
+}
+.title-block .rubric_tag {
+  margin-left: 5px;
+}
+.left-title-block {
+  float: left;
+}
+.main-bottom {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  color: darkslategrey;
+  background-color: darkgrey;
 }
