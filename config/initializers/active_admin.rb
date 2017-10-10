@@ -8,7 +8,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Bigmedia"
+  config.site_title = "pOpnOtdead"
   #config.register_javascript 'ckeditor/ckeditor.js' 
   config.register_javascript 'ckeditor/init.js'
   # Set the link url for the title. For example, to take
@@ -116,8 +116,7 @@ ActiveAdmin.setup do |config|
   # Set the action to call for the root path. You can set different
   # roots for each namespace.
   #
-  # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'articles#index'
 
   # == Admin Comments
   #
@@ -261,7 +260,7 @@ ActiveAdmin.setup do |config|
   # Pagination is enabled by default for all resources.
   # You can control the default per page count for all resources here.
   #
-   config.default_per_page = 20
+   config.default_per_page = 10
   #
   # You can control the max per page count too.
   #
