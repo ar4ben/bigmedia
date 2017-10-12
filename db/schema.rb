@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007003545) do
+ActiveRecord::Schema.define(version: 20171011230406) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -64,8 +64,10 @@ ActiveRecord::Schema.define(version: 20171007003545) do
     t.integer  "views",        default: 0
     t.text     "lead"
     t.integer  "rubric_id"
+    t.string   "author"
   end
 
+  add_index "articles", ["author"], name: "index_articles_on_author"
   add_index "articles", ["rubric_id"], name: "index_articles_on_rubric_id"
   add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true
 

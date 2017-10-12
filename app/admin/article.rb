@@ -1,5 +1,5 @@
 ActiveAdmin.register Article do
-  permit_params :title, :body, :preview_img, :published, :lead, :rubric_id, tag_list: [], category_ids: []
+  permit_params :title, :body, :preview_img, :published, :lead, :author, :rubric_id, tag_list: [], category_ids: []
 
   filter :title
   filter :body
@@ -77,6 +77,7 @@ ActiveAdmin.register Article do
       input :preview_img
     end
     inputs :lead
+    inputs :author, :title => "Имя Фамилия"
     inputs do
       input :categories, :as => :select, input_html: { class: 'prettyselect'}
     end  

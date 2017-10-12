@@ -14,6 +14,7 @@ class Article < ActiveRecord::Base
 
   before_save :make_preview_img_src_relative
   before_save :set_published_at
+  before_save :handle_author_name
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :russian).to_s
@@ -53,6 +54,10 @@ class Article < ActiveRecord::Base
 
   def set_published_at
     self.published_at = Time.now if self.published_changed? and self.published == true
+  end
+
+  def handle_author_name
+    self.author = self.author.strip.squeeze(" ") if self.author
   end
 
 end

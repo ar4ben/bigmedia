@@ -28,6 +28,9 @@
   padding-bottom: 10px;
   line-height: 2;
 }
+.article-author {
+  text-decoration: underline;
+}
 .thumbnail {
   background: inherit;
   border: none;
