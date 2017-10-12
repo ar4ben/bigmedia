@@ -17,6 +17,7 @@
   margin-bottom: 50px;
   font-size: 1.9rem;
   line-height: 1.50;
+  overflow: auto;
 }
 .article-body img {
   max-width: 100%;
