@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'meta-tags'
 gem 'paperclip'
 gem 'pg'
+gem 'puma'
 gem 'rails', '4.2.1'
 gem 'rolify', '5.1.0'
 gem 'rubocop', '~> 0.48.1', require: false
@@ -33,4 +34,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
