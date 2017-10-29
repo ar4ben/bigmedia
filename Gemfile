@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'meta-tags'
 gem 'paperclip'
+gem 'pg'
 gem 'rails', '4.2.1'
 gem 'rolify', '5.1.0'
 gem 'rubocop', '~> 0.48.1', require: false
