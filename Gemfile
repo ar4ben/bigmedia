@@ -18,7 +18,7 @@ gem 'meta-tags'
 gem 'paperclip'
 gem 'pg'
 gem 'puma'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.0'
 gem 'rolify', '5.1.0'
 gem 'rubocop', '~> 0.48.1', require: false
 gem 'sass-rails', '~> 5.0'
@@ -34,9 +34,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'spring'
   gem 'web-console', '~> 2.0'
-  gem 'capistrano'
-  gem 'capistrano3-puma'
+  gem 'capistrano',   require: false
+  gem 'capistrano3-puma',   require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
+  gem 'capistrano-rvm',   require: false
 end
