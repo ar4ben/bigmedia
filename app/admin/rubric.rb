@@ -1,4 +1,5 @@
 ActiveAdmin.register Rubric do
+  skip_before_action :set_categories_rubrics
   permit_params :name
   filter :name
 
