@@ -11,6 +11,7 @@ ActiveAdmin.setup do |config|
   config.site_title = "pOpnOtdead"
   #config.register_javascript 'ckeditor/ckeditor.js' 
   config.register_javascript 'ckeditor/init.js'
+  config.register_javascript 'ckeditor/extrastyles.js'
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
