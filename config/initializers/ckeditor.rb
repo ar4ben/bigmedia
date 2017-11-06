@@ -44,20 +44,11 @@ Ckeditor.setup do |config|
   # To reduce the asset precompilation time, you can limit plugins and/or languages to those you need:
   # By default: nil (no limit)
   config.assets_languages = ['en', 'uk']
-  config.assets_plugins = ["dialog",
-                           "notification",
-                           "image2",
-                           "button",
-                           "mediaembed",
-                           "widgetselection",
-                           "toolbar",
-                           "widget",
-                           "lineutils",
-                           "clipboard",
-                           "dialogui",
-                           "autogrow",
-                           "image"]
-
+  assets_root =  Rails.root.join('app','assets','javascripts')
+  ckeditor_plugins_root = assets_root.join('ckeditor','plugins')
+  %w(dialog notification image2 button mediaembed widgetselection toolbar widget lineutils clipboard dialogui autogrow image).each do |ckeditor_plugin|
+    Ckeditor.assets += Dir[ckeditor_plugins_root.join(ckeditor_plugin, '**', '*.js')].map {|x| x.sub(assets_root.to_path, '').sub(/^\/+/, '')}
+  end
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/
   # By default: nil (CDN disabled)
