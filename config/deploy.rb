@@ -23,6 +23,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_dirs, fetch(:linked_dirs, []).push('public/ckeditor_assets')
 
 ## Defaults:
 # set :scm,           :git
