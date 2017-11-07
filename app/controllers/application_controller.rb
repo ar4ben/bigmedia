@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
                     title: @article.title,
                     type: 'article',
                     url: request.original_url,
-                    image: @article.preview_img,
+                    image: "#{request.domain}#{@article.preview_img}",
                     description: @article.lead
                   }
   end
