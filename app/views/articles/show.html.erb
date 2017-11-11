@@ -54,7 +54,7 @@
         <div class="col-sm-6 col-md-4">
           <%= link_to(article, class: "no-link") do %>
             <div class="thumbnail">
-                <%= image_tag("http://localhost:3000/ckeditor_assets/pictures/15/thumb_38.jpg", class: 'img-circle') %>
+                <%= image_tag("#{article.preview_img.gsub('original','thumb')}", class: 'img-circle') %>
               <div class="caption">
                 <div class="views-comments-thumb">
                   <div>

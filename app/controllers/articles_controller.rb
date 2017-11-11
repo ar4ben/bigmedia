@@ -18,7 +18,8 @@ class ArticlesController < ApplicationController
       views: @article.views + 1
     )
     @relevant_articles = Article.tagged_with(@article.tag_list, :any => true)
-                         .where.not(id: @article.id).order('views desc').limit(3)
+                         .where(published: true).where.not(id: @article.id)
+                         .order('views desc').limit(3)
   end
 
   private

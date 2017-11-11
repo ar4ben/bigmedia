@@ -41,13 +41,26 @@ class ApplicationController < ActionController::Base
   end
 
   def set_meta
+    uri = URI.parse(request.original_url)
+    image = if @article.preview_img.include?("http")
+              @article.preview_img
+            else
+              "#{uri.scheme}://#{uri.host}#{@article.preview_img}"
+            end
     set_meta_tags description: @article.lead,
                   keywords: @article.tag_list,
                   og: {
                     title: @article.title,
                     type: 'article',
                     url: request.original_url,
-                    image: "#{request.domain}#{@article.preview_img}",
+                    image: image,
+                    description: @article.lead
+                  },
+                  vk: {
+                    title: @article.title,
+                    type: 'article',
+                    url: request.original_url,
+                    image: image,
                     description: @article.lead
                   }
   end

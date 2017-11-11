@@ -73,8 +73,8 @@ ActiveAdmin.register Article do
     inputs do
       input :body, :as => :ckeditor
     end
-    inputs do
-      input :preview_img
+    inputs :name => "Минимальный размер 200x200px" do
+      input :preview_img 
     end
     inputs :lead
     inputs :author, :title => "Имя Фамилия"
