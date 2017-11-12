@@ -47,6 +47,7 @@ class ApplicationController < ActionController::Base
             else
               "#{uri.scheme}://#{uri.host}#{@article.preview_img}"
             end
+    image_dim = FastImage.size("http://178.172.173.210/ckeditor_assets/pictures/4/original_Blade_Runner_1_10_Movie_CLIP_She_s_a_Replicant_1982_HD.gif") 
     set_meta_tags description: @article.lead,
                   keywords: @article.tag_list,
                   og: {
@@ -55,13 +56,12 @@ class ApplicationController < ActionController::Base
                     url: request.original_url,
                     image: image,
                     description: @article.lead
-                  },
-                  vk: {
-                    title: @article.title,
-                    type: 'article',
-                    url: request.original_url,
-                    image: image,
-                    description: @article.lead
                   }
+    set_meta_tags og: {
+                    image: {
+                      width: image_dim[0],
+                      height: image_dim[1]
+                    }
+                  } if image_dim
   end
 end
