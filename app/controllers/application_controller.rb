@@ -59,6 +59,7 @@ class ApplicationController < ActionController::Base
                   }
     set_meta_tags og: {
                     image: {
+                      _: image,
                       width: image_dim[0],
                       height: image_dim[1]
                     }
