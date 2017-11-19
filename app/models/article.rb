@@ -45,7 +45,8 @@ class Article < ActiveRecord::Base
   private
 
   def make_preview_img_src_relative
-    #self.preview_img = self.preview_img[/https?:\/\/.*?(\/.*)/,1] if self.preview_img =~ /http/
+    self.preview_img = self.preview_img[/https?:\/\/.*?(\/.*)/,1] if self.preview_img =~ /http/
+    self.preview_img = self.preview_img.gsub('thumb','original') if self.preview_img =~ /\/thumb_/
   end
 
   def has_category?
