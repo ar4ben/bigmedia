@@ -195,7 +195,7 @@ GEM
       byebug (~> 9.1)
       pry (~> 0.10)
     puma (3.10.0)
-    rack (1.6.8)
+    rack (1.6.13)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
